@@ -33,8 +33,6 @@ class Simulator:
             self.polygon_side = 4
         if art_num == 3:
             self.polygon_side = 5
-        if art_num == 4:
-            self.polygon_side = random.randint(3, 5)
         self.num_polygon = random.randint(25, 30)
         self.polygon_list = []
         turtle.speed(0)
@@ -42,6 +40,8 @@ class Simulator:
         turtle.tracer(0)
         turtle.colormode(255)
         for i in range(self.num_polygon):
+            if art_num == 4:
+                self.polygon_side = random.randint(3, 5)
             self.color = random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)
             self.size = random.randint(50, 150)
             self.orientation = random.randint(0, 90)
